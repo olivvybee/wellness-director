@@ -1,40 +1,24 @@
 import path from 'path';
 import fs from 'fs';
 
-import { entries, noEntriesMessages } from './arrays';
+import { entries } from './entries';
 import { randomElement } from './utils';
 
 const USED_ENTRIES_PATH = path.resolve('.', 'usedEntries');
-const USED_NO_ENTRIES_MESSAGES_PATH = path.resolve(
-  '.',
-  'usedNoEntriesMessages'
-);
 
 export const generate = (dryRun: boolean) => {
   const usedEntries = getUsedWords(USED_ENTRIES_PATH);
-  const usedNoEntriesMessages = getUsedWords(USED_NO_ENTRIES_MESSAGES_PATH);
 
   let unusedEntries = entries.filter((entry) => !usedEntries.includes(entry));
-  let unusedNoEntriesMessages = entries.filter(
-    (message) => !usedNoEntriesMessages.includes(message)
-  );
 
-  if (!unusedNoEntriesMessages.length) {
-    resetUsedWords(USED_NO_ENTRIES_MESSAGES_PATH);
-    unusedNoEntriesMessages = noEntriesMessages;
+  if (unusedEntries.length === 0) {
+    return undefined;
   }
 
-  const hasEntry = unusedEntries.length > 0;
-
-  const post = hasEntry
-    ? randomElement(unusedEntries)
-    : randomElement(unusedNoEntriesMessages);
+  const post = randomElement(unusedEntries);
 
   if (!dryRun) {
-    saveUsedWord(
-      hasEntry ? USED_ENTRIES_PATH : USED_NO_ENTRIES_MESSAGES_PATH,
-      post
-    );
+    saveUsedWord(USED_ENTRIES_PATH, post);
   }
 
   return post;

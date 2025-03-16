@@ -15,8 +15,10 @@ const main = async ({ dryRun = false, visibility }: MainArgs) => {
 
   if (dryRun) {
     console.log(`This is a dry run, but I would have posted "${post}".`);
-  } else {
+  } else if (post) {
     postStatus(post, { visibility });
+  } else {
+    console.log('There are no entries left to post');
   }
 };
 
