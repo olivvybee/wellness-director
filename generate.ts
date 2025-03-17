@@ -15,10 +15,11 @@ export const generate = (dryRun: boolean) => {
     return undefined;
   }
 
-  const post = randomElement(unusedEntries);
+  const entry = randomElement(unusedEntries);
+  const post = `Your Outie ${entry}.`;
 
   if (!dryRun) {
-    saveUsedWord(USED_ENTRIES_PATH, post);
+    saveUsedWord(USED_ENTRIES_PATH, entry);
   }
 
   return post;
