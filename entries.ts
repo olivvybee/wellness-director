@@ -29,7 +29,6 @@ export const entries: string[] = [
   'has a drawer full of bulging lithium batteries',
   'can whistle mostly in tune',
   'is learning Toki Pona',
-  'knows how to use Fusion 360',
   'has a 628 day streak on Duolingo',
   'is up to date with One Piece',
   "doesn't play a stealth archer in Skyrim",
@@ -38,7 +37,7 @@ export const entries: string[] = [
   'has never been given a speeding ticket',
   'uses an AeroPress to make coffee',
   'gives the middle finger to passing Cybertrucks',
-  'is part of a polycule with 42 members',
+  'is part of a polycule with 142 members',
   'has ridden different 374 roller coasters',
   'prefers the Star Wars sequel trilogy',
   'snuggles with a plushie every night',
@@ -51,7 +50,7 @@ export const entries: string[] = [
   'only forgets to take medication once a week',
   'has over 200,000 Gamerscore',
   'proved that P = NP',
-  "can solve a Rubik's cube in under 8 minutes",
+  "can solve a Rubik's cube in less than 8 hours",
   'takes a pencil during every IKEA visit',
   'stores clothes in alphabetical order',
   'walks uphill both ways to and from work',
@@ -99,4 +98,5 @@ export const entries: string[] = [
   'refuses to update to Windows 11',
   'has never finished a project before starting a new one',
   'has an elaborate Home Assistant setup',
+  'once finished an entire chapstick"
 ];
