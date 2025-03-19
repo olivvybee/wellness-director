@@ -99,4 +99,5 @@ export const entries: string[] = [
   'has never finished a project before starting a new one',
   'has an elaborate Home Assistant setup',
   'once finished an entire chapstick',
+  'thinks socks and sandals go together',
 ];
