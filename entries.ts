@@ -98,5 +98,5 @@ export const entries: string[] = [
   'refuses to update to Windows 11',
   'has never finished a project before starting a new one',
   'has an elaborate Home Assistant setup',
-  'once finished an entire chapstick"
+  'once finished an entire chapstick',
 ];
