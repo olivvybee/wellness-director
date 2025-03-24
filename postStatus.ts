@@ -24,10 +24,21 @@ export const postStatus = async (
   const { visibility = 'unlisted', inReplyToId, contentWarning } = options;
 
   const client = createRestAPIClient({ url, accessToken });
-  return client.v1.statuses.create({
-    status,
-    visibility,
-    inReplyToId,
-    spoilerText: contentWarning,
-  });
+
+  let attempts = 0;
+
+  while (attempts < 5) {
+    try {
+      attempts += 1;
+      await client.v1.statuses.create({
+        status,
+        visibility,
+        inReplyToId,
+        spoilerText: contentWarning,
+      });
+      break;
+    } catch (err) {
+      console.log('Failed to post:', err);
+    }
+  }
 };
