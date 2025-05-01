@@ -100,4 +100,5 @@ export const entries: string[] = [
   'has an elaborate Home Assistant setup',
   'once finished an entire chapstick',
   'thinks socks and sandals go together',
+  'forgot the encryption password to an old hard drive containing 37 bitcoin",
 ];
